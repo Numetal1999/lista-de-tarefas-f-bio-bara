@@ -16,7 +16,7 @@ idade = int(input("Digite sua idade: "))
 print(verificador_de_idade(idade))
 
 
-2- peso = float(input("Digite seu peso (kg): "))
+2-- peso = float(input("Digite seu peso (kg): "))
 altura = float(input("Digite sua altura (m): "))
 
 imc = peso / (altura ** 2)
