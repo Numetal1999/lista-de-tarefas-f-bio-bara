@@ -1,4 +1,5 @@
- 1- def verificador_de_idade(idade):
+1 — Verificador de Idade
+def verificador_de_idade(idade):
     if idade < 0 or idade > 120:
         return "Idade inválida"
     elif idade <= 11:
@@ -10,13 +11,10 @@
     else:
         return "Idoso"
 
-
 idade = int(input("Digite sua idade: "))
-
 print(verificador_de_idade(idade))
-
-
- 2- peso = float(input("Digite seu peso (kg): "))
+2 — Calculadora de IMC
+peso = float(input("Digite seu peso (kg): "))
 altura = float(input("Digite sua altura (m): "))
 
 imc = peso / (altura ** 2)
@@ -29,9 +27,8 @@ elif imc <= 29.9:
     print(f"IMC: {imc:.1f} - Sobrepeso")
 else:
     print(f"IMC: {imc:.1f} - Obesidade")
-
-
-3- cotacoes = {
+3 — Conversor de Moedas
+cotacoes = {
     1: ("US$", 5.15),
     2: ("€", 5.55),
     3: ("£", 6.45)
@@ -53,9 +50,8 @@ else:
         simbolo, cotacao = cotacoes[opcao]
         convertido = valor / cotacao
         print(f"R$ {valor:.2f} = {simbolo} {convertido:.2f}")
-
-
-4- a = float(input("Digite o lado a: "))
+4 — Verificador de Triângulo
+a = float(input("Digite o lado a: "))
 b = float(input("Digite o lado b: "))
 c = float(input("Digite o lado c: "))
 
@@ -70,9 +66,8 @@ else:
         print("Triângulo válido: Isósceles")
     else:
         print("Triângulo válido: Escaleno")
-
-
-5- valor = float(input("Digite o valor da compra: R$ "))
+5 — Calculadora de Descontos
+valor = float(input("Digite o valor da compra: R$ "))
 vip = input("Cliente VIP? (sim/nao): ").strip().lower()
 
 if valor <= 100:
@@ -93,8 +88,7 @@ print(f"Desconto: R$ {desconto:.2f}")
 if desconto_vip > 0:
     print(f"Desconto VIP: R$ {desconto_vip:.2f}")
 print(f"Valor final: R$ {final:.2f}")
-
-6- 
+6 — Verificador de Ano Bissexto e Data
 dia = int(input("Digite o dia: "))
 mes = int(input("Digite o mês: "))
 ano = int(input("Digite o ano: "))
@@ -107,7 +101,6 @@ print("Ano bissexto:", "Sim" if bissexto else "Não")
 if mes < 1 or mes > 12:
     print("Data inválida: mês inválido")
 else:
-
     if mes == 2:
         max_dias = 29 if bissexto else 28
     elif mes in [4, 6, 9, 11]:
@@ -121,10 +114,8 @@ else:
         print(f"Data inválida: mês {mes} tem apenas {max_dias} dias")
     else:
         print("Data válida!")
-
-
-7- print("=== CAIXA ELETRÔNICO ===")
-
+7 — Simulador de Caixa Eletrônico
+print("=== CAIXA ELETRÔNICO ===")
 valor = int(input("Digite o valor do saque (múltiplo de 10): R$ "))
 
 print(f"\n=== Saque: R$ {valor} ===")
@@ -156,11 +147,8 @@ else:
     print(f"R$ 20:  {n20} cédula(s)")
     print(f"R$ 10:  {n10} cédula(s)")
     print(f"Total de cédulas: {total}")
-
-
-
-8- print("=== CALCULO DE ESTACIONAMENTO ===")
-
+8 — Calculadora de Estacionamento
+print("=== CALCULO DE ESTACIONAMENTO ===")
 entrada = int(input("Hora de entrada (0-23): "))
 saida = int(input("Hora de saída (0-23): "))
 placa = int(input("Último número da placa: "))
@@ -200,28 +188,16 @@ if dia == "segunda" and placa % 2 == 0:
     print(f"Desconto (10%): R$ {desconto:.2f}")
 
 print(f"Total: R$ {total:.2f}")
+9 — Pedra, Papel, Tesoura, Lagarto, Spock
+import random
 
-9- import random
-
-nomes = {
-    1: "Pedra",
-    2: "Papel",
-    3: "Tesoura",
-    4: "Lagarto",
-    5: "Spock"
-}
-
+nomes = {1: "Pedra", 2: "Papel", 3: "Tesoura", 4: "Lagarto", 5: "Spock"}
 regras = {
-    (1, 3): "quebra",
-    (1, 4): "esmaga",
-    (2, 1): "cobre",
-    (2, 5): "refuta",
-    (3, 2): "corta",
-    (3, 4): "decapita",
-    (4, 2): "come",
-    (4, 5): "envenena",
-    (5, 1): "vaporiza",
-    (5, 3): "derrete"
+    (1, 3): "quebra", (1, 4): "esmaga",
+    (2, 1): "cobre", (2, 5): "refuta",
+    (3, 2): "corta", (3, 4): "decapita",
+    (4, 2): "come", (4, 5): "envenena",
+    (5, 1): "vaporiza", (5, 3): "derrete"
 }
 
 jogador = int(input("Escolha (1-Pedra, 2-Papel, 3-Tesoura, 4-Lagarto, 5-Spock): "))
@@ -242,40 +218,40 @@ else:
     else:
         acao = regras[(computador, jogador)]
         print(f"{nomes[computador]} {acao} {nomes[jogador]} — Computador venceu!")
-  
-
-10- print("=== CÁLCULO DE IR ===")
+10 — Calculadora de Imposto de Renda 2025
+print("=== CÁLCULO DE IR ===")
 
 salario = float(input("Salário bruto: R$ "))
 deps = int(input("Número de dependentes: "))
 pensao = float(input("Valor da pensão: R$ "))
 idoso_input = input("Tem 65 anos ou mais? (s/n): ")
-
 idoso = idoso_input.lower() == "s"
 
 print("\n=== RESULTADO ===")
 
-if salario > 4190.83:
-    inss = salario * 0.14
+# INSS progressivo simplificado
+if salario > 8157.41:
+    inss = 14 / 100 * 8157.41
+elif salario > 4190.83:
+    inss = 14 / 100 * (salario - 4190.83) + 401.36 + 167.63 + 114.83 + 113.85
 elif salario > 2793.88:
-    inss = salario * 0.12
+    inss = 12 / 100 * (salario - 2793.88) + 167.63 + 114.83 + 113.85
 elif salario > 1518:
-    inss = salario * 0.09
+    inss = 9 / 100 * (salario - 1518) + 114.83 + 113.85
 else:
-    inss = salario * 0.075
+    inss = 7.5 / 100 * salario
 
 print(f"INSS: R$ {inss:.2f}")
 
 base = salario - inss - (deps * 189.59) - pensao
-
 if idoso:
     base -= 1903.98
-
 if base < 0:
     base = 0
 
 print(f"Base IR: R$ {base:.2f}")
 
+# IR progressivo
 if base <= 2259.20:
     ir = 0
 elif base <= 2826.65:
@@ -288,6 +264,5 @@ else:
     ir = base * 0.275
 
 print(f"IR: R$ {ir:.2f}")
-
 liquido = salario - inss - ir
 print(f"Salário líquido: R$ {liquido:.2f}")
