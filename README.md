@@ -13,6 +13,7 @@ def verificador_de_idade(idade):
 
 idade = int(input("Digite sua idade: "))
 print(verificador_de_idade(idade))
+
 2 — Calculadora de IMC
 peso = float(input("Digite seu peso (kg): "))
 altura = float(input("Digite sua altura (m): "))
@@ -27,6 +28,7 @@ elif imc <= 29.9:
     print(f"IMC: {imc:.1f} - Sobrepeso")
 else:
     print(f"IMC: {imc:.1f} - Obesidade")
+    
 3 — Conversor de Moedas
 cotacoes = {
     1: ("US$", 5.15),
@@ -50,6 +52,7 @@ else:
         simbolo, cotacao = cotacoes[opcao]
         convertido = valor / cotacao
         print(f"R$ {valor:.2f} = {simbolo} {convertido:.2f}")
+        
 4 — Verificador de Triângulo
 a = float(input("Digite o lado a: "))
 b = float(input("Digite o lado b: "))
@@ -66,6 +69,7 @@ else:
         print("Triângulo válido: Isósceles")
     else:
         print("Triângulo válido: Escaleno")
+        
 5 — Calculadora de Descontos
 valor = float(input("Digite o valor da compra: R$ "))
 vip = input("Cliente VIP? (sim/nao): ").strip().lower()
@@ -88,6 +92,7 @@ print(f"Desconto: R$ {desconto:.2f}")
 if desconto_vip > 0:
     print(f"Desconto VIP: R$ {desconto_vip:.2f}")
 print(f"Valor final: R$ {final:.2f}")
+
 6 — Verificador de Ano Bissexto e Data
 dia = int(input("Digite o dia: "))
 mes = int(input("Digite o mês: "))
@@ -114,6 +119,7 @@ else:
         print(f"Data inválida: mês {mes} tem apenas {max_dias} dias")
     else:
         print("Data válida!")
+        
 7 — Simulador de Caixa Eletrônico
 print("=== CAIXA ELETRÔNICO ===")
 valor = int(input("Digite o valor do saque (múltiplo de 10): R$ "))
@@ -147,6 +153,7 @@ else:
     print(f"R$ 20:  {n20} cédula(s)")
     print(f"R$ 10:  {n10} cédula(s)")
     print(f"Total de cédulas: {total}")
+    
 8 — Calculadora de Estacionamento
 print("=== CALCULO DE ESTACIONAMENTO ===")
 entrada = int(input("Hora de entrada (0-23): "))
@@ -188,6 +195,7 @@ if dia == "segunda" and placa % 2 == 0:
     print(f"Desconto (10%): R$ {desconto:.2f}")
 
 print(f"Total: R$ {total:.2f}")
+
 9 — Pedra, Papel, Tesoura, Lagarto, Spock
 import random
 
@@ -218,6 +226,7 @@ else:
     else:
         acao = regras[(computador, jogador)]
         print(f"{nomes[computador]} {acao} {nomes[jogador]} — Computador venceu!")
+        
 10 — Calculadora de Imposto de Renda 2025
 print("=== CÁLCULO DE IR ===")
 
