@@ -1,4 +1,4 @@
-# 1- def verificador_de_idade(idade):
+ 1- def verificador_de_idade(idade):
     if idade < 0 or idade > 120:
         return "Idade inválida"
     elif idade <= 11:
@@ -16,7 +16,7 @@ idade = int(input("Digite sua idade: "))
 print(verificador_de_idade(idade))
 
 
-# 2- peso = float(input("Digite seu peso (kg): "))
+ 2- peso = float(input("Digite seu peso (kg): "))
 altura = float(input("Digite sua altura (m): "))
 
 imc = peso / (altura ** 2)
@@ -101,14 +101,13 @@ ano = int(input("Digite o ano: "))
 
 print(f"\nData: {dia:02d}/{mes:02d}/{ano}")
 
-# verifica bissexto
 bissexto = (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0)
 print("Ano bissexto:", "Sim" if bissexto else "Não")
 
 if mes < 1 or mes > 12:
     print("Data inválida: mês inválido")
 else:
-    # dias do mês
+
     if mes == 2:
         max_dias = 29 if bissexto else 28
     elif mes in [4, 6, 9, 11]:
@@ -130,7 +129,6 @@ valor = int(input("Digite o valor do saque (múltiplo de 10): R$ "))
 
 print(f"\n=== Saque: R$ {valor} ===")
 
-# validação
 if valor <= 0:
     print("Valor inválido: deve ser positivo")
 elif valor % 10 != 0:
@@ -278,7 +276,6 @@ if base < 0:
 
 print(f"Base IR: R$ {base:.2f}")
 
-# IR simples
 if base <= 2259.20:
     ir = 0
 elif base <= 2826.65:
