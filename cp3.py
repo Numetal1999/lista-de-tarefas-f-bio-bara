@@ -299,24 +299,24 @@ def requisitar(endpoint):
             reset = e.headers.get("X-RateLimit-Reset", "")
             if reset:
                 espera = int(reset) - int(time.time())
-                print(f"\n  ⚠  Rate limit atingido. Tente novamente em {max(espera, 0)}s.")
+                print(f"\n   Rate limit atingido. Tente novamente em {max(espera, 0)}s.")
             else:
-                print("\n  ⚠  Acesso negado (403):", corpo.get("message", ""))
+                print("\n   Acesso negado (403):", corpo.get("message", ""))
         elif e.code == 404:
-            print(f"\n  ✗  Não encontrado (404): {corpo.get('message', url)}")
+            print(f"\n  X  Não encontrado (404): {corpo.get('message', url)}")
         else:
-            print(f"\n  ✗  Erro HTTP {e.code}: {corpo.get('message', '')}")
+            print(f"\n  X  Erro HTTP {e.code}: {corpo.get('message', '')}")
         return None, e.code
 
     except urllib.error.URLError as e:
         if "timed out" in str(e.reason).lower():
-            print(f"\n  ✗  Timeout após {TIMEOUT}s.")
+            print(f"\n  X  Timeout após {TIMEOUT}s.")
         else:
-            print(f"\n  ✗  Erro de conexão: {e.reason}")
+            print(f"\n  X  Erro de conexão: {e.reason}")
         return None, None
 
     except Exception as e:
-        print(f"\n  ✗  Erro inesperado: {e}")
+        print(f"\n  X  Erro inesperado: {e}")
         return None, None
 
 
@@ -332,7 +332,7 @@ def salvar(dados, tipo, identificador):
     with open(ARQUIVO_RESULTADOS, "w", encoding="utf-8") as f:
         json.dump(resultados_sessao, f, ensure_ascii=False, indent=2)
 
-    print(f"\n  ✔  Salvo em '{ARQUIVO_RESULTADOS}'")
+    print(f"\n  S  Salvo em '{ARQUIVO_RESULTADOS}'")
 
 
 def ver_perfil(username):
